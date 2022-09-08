@@ -1,0 +1,55 @@
+.wrapper {
+    .image {
+        margin-bottom: 8px;
+        text-align: center;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    .content {
+        .time {
+            margin-bottom: 10px;
+            text-align: center;
+            span {
+                color: #999;
+                font-size: 90%;
+            }
+        }
+        .title {
+            position: relative;
+            padding-bottom: 12px;
+            text-align: center;
+            margin: 0 0 13px 0;
+            font-weight: 500;
+            &::after {
+                position: absolute;
+                content: '';
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 50px;
+                height: 2px;
+                background: #f59505;
+            }
+            h3 {
+                font-size: 18px;
+                line-height: 22px;
+                overflow: hidden;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                display: -webkit-box;
+                font-weight: 500;
+                text-transform: uppercase;
+                color: var(--text-dark);
+            }
+        }
+        .description {
+            text-align: center;
+            line-height: 1.4;
+            font-size: 14px;
+            color: var(--text-dark);
+        }
+    }
+}

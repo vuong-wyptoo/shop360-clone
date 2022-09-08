@@ -1,0 +1,40 @@
+$mobile-width: 690px;
+@mixin mobile {
+    @media only screen and (max-width: $mobile-width) {
+        @content;
+    }
+}
+
+.wrapper {
+    display: flex;
+    padding: 1em 2em 1em 3.5em;
+    margin: 0 0 2em;
+    position: relative;
+    background-color: #f7f6f7;
+    color: #515151;
+    border-top: 3px solid #8fae1b;
+    list-style: none outside;
+    width: auto;
+    word-wrap: break-word;
+    .name {
+        flex: 1;
+        font-size: 16px;
+        .icon {
+            color: #8fae1b;
+            margin-right: 1.5rem;
+        }
+    }
+    .btn {
+        padding: 10px 28px;
+        a {
+            font-weight: bold;
+        }
+    }
+    @include mobile {
+        padding-left: 10px;
+        padding-right: 10px;
+        .name {
+            font-size: 14px;
+        }
+    }
+}

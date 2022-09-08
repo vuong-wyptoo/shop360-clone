@@ -1,0 +1,218 @@
+// đặt biến
+$numbers: (0, 1, 2, 3, 4, 5, 6, 7, 8);
+$mobile-width: 640px;
+$tablet-width: 1024px;
+$align-items: center;
+$justify-content: center;
+$header-height: 147px;
+$header-tablet-height: 70px;
+$header-mobile-height: 70px;
+$header-shrink-height: 70px;
+
+//mixins
+@mixin flex($align-item, $justify-content) {
+    display: flex;
+    align-items: $align-item;
+    justify-content: $justify-content;
+}
+@mixin mobile {
+    @media only screen and (max-width: $mobile-width) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (max-width: $tablet-width) {
+        @content;
+    }
+}
+//
+
+.wrapper {
+    margin-top: 5rem;
+    .top-footer {
+        background: var(--background-color);
+        padding: 15px 0;
+        .content {
+            display: flex;
+            align-items: center;
+            @include tablet {
+                flex-direction: column;
+                align-items: unset;
+            }
+            .title {
+                background-repeat: no-repeat;
+                background-image: url('https://360boutique.vn/wp-content/themes/360boutique/img/icon_footer.png');
+                background-size: 20px;
+                padding-left: 35px;
+                padding-right: 10px;
+                margin-right: 20px;
+                height: 20px;
+                line-height: 24px;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-align-items: center;
+                align-items: center;
+                h4 {
+                    line-height: inherit;
+                    font-size: 14px;
+                    color: #252a2b;
+                    font-weight: 500;
+                }
+            }
+            .input-group {
+                flex: 2;
+                margin-right: 30px;
+                @include tablet {
+                    margin: 20px 20px 20px 0;
+                }
+                form {
+                    display: flex;
+                    width: 100%;
+                    input {
+                        height: 46px;
+                        border: 1px solid #e7e7e7;
+                        box-shadow: none;
+                        font-weight: 500;
+                        font-size: 14px;
+                        padding: 0 20px;
+                        background: #fbfbfb;
+                        color: #252a2b;
+                        width: 100%;
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                    button {
+                        color: var(--white-color);
+                        padding: 13px 25px;
+                        background-color: var(--black-color);
+                        text-transform: uppercase;
+                        width: 134px;
+                        font-size: 12px;
+                        &:hover {
+                            background-color: #252a2b;
+                        }
+                    }
+                }
+            }
+            .contact {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                .icon {
+                    font-size: 24px;
+                    margin-right: 10px;
+                }
+                span {
+                    font-size: 14px;
+                }
+                a {
+                    color: red;
+                    font-size: 15px;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+    .mid-footer {
+        padding: 40px 0 30px;
+        border-bottom: 1px solid #e7e7e7;
+        border-top: 1px solid #e7e7e7;
+        .mid-item {
+            @include mobile {
+                border-bottom: 1px solid #efefef;
+            }
+            h4 {
+                font-size: 20px;
+                letter-spacing: 0.02em;
+                margin: 0 0 20px;
+                position: relative;
+                line-height: 30px;
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+            ul {
+                margin-bottom: 15px;
+                li {
+                    line-height: 28px;
+                    a {
+                        font-size: 1.4rem;
+                        &:hover {
+                            color: var(--black-color);
+                        }
+                    }
+                    img {
+                        width: 185px;
+                        margin: 20px 20px 20px 0;
+                    }
+                }
+            }
+        }
+        .wrapper-fanpage {
+            h4 {
+                font-size: 20px;
+                letter-spacing: 0.02em;
+                margin: 0 0 20px;
+                position: relative;
+                line-height: 30px;
+                font-weight: 500;
+            }
+            .fanpage {
+                margin-bottom: 15px;
+                .content {
+                    position: relative;
+                    max-width: 282.5px;
+                    overflow-x: hidden;
+                    @include tablet {
+                        max-width: 340px;
+                    }
+                    .img {
+                        max-width: 100%;
+                    }
+                    .infor {
+                        display: flex;
+                        position: absolute;
+                        top: 0;
+                        padding: 8px;
+                        left: 0;
+                        right: 0;
+                        .sadown {
+                            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+                            height: 100%;
+                            left: 0;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                        }
+                        a {
+                            z-index: 1;
+                            img {
+                                border: 2px solid var(--white-color);
+                            }
+                            margin-right: 5px;
+                        }
+                        .link {
+                            z-index: 1;
+                        }
+                        .link a,
+                        span {
+                            color: var(--white-color);
+                        }
+                        span {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .bottom-footer {
+        padding: 20px 0;
+        p {
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-dark);
+        }
+    }
+}
